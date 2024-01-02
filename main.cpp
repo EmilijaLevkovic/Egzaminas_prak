@@ -52,7 +52,7 @@ bool ifremove(string &zodis,int &i){
 }
 
 void Rasymas(map<string,zodziuinfo> &zodziai,vector<string> &saitai,std::sregex_iterator &it,std::sregex_iterator &end){
-    ofstream fout("zodziu_sarasas.pdf");
+    ofstream fout("o.txt");
     for(auto &it:zodziai){
         fout<<it.first<<" "<<it.second.pasikartojimai<<endl;
     }
@@ -60,7 +60,7 @@ void Rasymas(map<string,zodziuinfo> &zodziai,vector<string> &saitai,std::sregex_
     for(;it!=end;it++){
         fout<<it->str()<<endl;
     }
-    ofstream fout2("pasikartojantys.txt");
+    ofstream fout2("table.txt");
     fout2<<"Zodziu indeksai: \n";
     for(auto &it:zodziai){
         if(it.second.indeksai.size()>1){
